@@ -37,7 +37,7 @@ public class GameScript : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            //Enemy[0].transform.localScale += new Vector3(0.1f, 0.1f, 0f);
+            Enemy[0].transform.localScale += new Vector3(0.1f, 0.1f, 0f);
         }
     }
 

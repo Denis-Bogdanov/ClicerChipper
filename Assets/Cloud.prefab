@@ -109,4 +109,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cloud: {fileID: 3978295365926757028}
   speed: 1.5
-  delay: 3
+  delay: 5
