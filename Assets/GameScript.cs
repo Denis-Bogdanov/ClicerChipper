@@ -23,21 +23,30 @@ public class GameScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetMouseButton(0))
-        {
-            DestroyEnemy();
-        }
+        
     }
 
     [UsedImplicitly]
     public void DestroyEnemy()
     {
         Destroy(_spawnedEnemy);
-        SpawnEnemy();
+       // SpawnEnemy();
     }
-    // Update is called once per frame
-    void Update()
+
+    public void Click()
     {
-        
+        if (Input.GetMouseButton(0))
+        {
+            //Enemy[0].transform.localScale += new Vector3(0.1f, 0.1f, 0f);
+        }
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            //Enemy[0].transform.localScale += new Vector3(0.1f, 0.1f, 0f);
+        }
     }
 }
