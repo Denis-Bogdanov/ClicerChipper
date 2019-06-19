@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3978295365926757050}
   - component: {fileID: 3978295365926757051}
-  - component: {fileID: 1674626839587637017}
   - component: {fileID: 7014774992421183431}
   m_Layer: 0
   m_Name: Cloud
@@ -69,7 +68,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9b663d490c658a1448caa654aeaa05f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -81,20 +80,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1674626839587637017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3978295365926757028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7ea9ca66af608a4bbd7abb68ed9a317, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemy: []
-  Position: {x: 0, y: 0, z: 0}
 --- !u!114 &7014774992421183431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +92,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09cf0a89e3a1a434f85025feb6d46c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cloud: {fileID: 3978295365926757028}
   speed: 1.5
-  delay: 5

@@ -1,32 +1,23 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CloudMove : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject Cloud;
     public float speed;
-    public float delay;
 
-
-    private void Start()
+    private float _speed;
+    private void OnEnable()
     {
-        StartCoroutine(SpawnCloud());
+        _speed = Random.Range(1f, 7f);
     }
 
     // Update is called once per frame
     private void Update()
     {
-        gameObject.transform.position += Vector3.right * speed * Time.deltaTime;
-        if (Cloud.transform.position.x >= 4.5)
+        gameObject.transform.position += Vector3.right * _speed * Time.deltaTime;
+        if (gameObject.transform.position.x >= 4.5)
         {
-            Destroy(Cloud);
+            Destroy(gameObject);
         }
-    }
-
-    private IEnumerator SpawnCloud()
-    {
-        yield return new WaitForSeconds(delay);
-        Instantiate(Cloud, new Vector3(-3.65f, 2f, 0f), Quaternion.identity);
     }
 }
