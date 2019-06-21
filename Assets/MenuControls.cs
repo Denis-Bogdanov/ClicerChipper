@@ -10,7 +10,6 @@ public class MenuControls : MonoBehaviour
     
     public void ExitPressed()
     {
-        Debug.Log("Exit pressed!");
         Application.Quit();
     }
 }
