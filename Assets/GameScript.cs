@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GameScript : MonoBehaviour
@@ -12,6 +13,8 @@ public class GameScript : MonoBehaviour
     public float Delay;
     private GameObject _spawnedEnemy;
 
+    public Text ScoreText;
+    public int Score = 0;
 
     void Start()
     {
@@ -21,7 +24,12 @@ public class GameScript : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        _spawnedEnemy = Instantiate(Enemy[Random.Range(0, Enemy.Length + 1)], Position, Quaternion.identity);
+        _spawnedEnemy = Instantiate(Enemy[Random.Range(0, Enemy.Length)], Position, Quaternion.identity);
+        var enemy = _spawnedEnemy.GetComponent<EnemyScript>();
+        if (enemy != null)
+        {
+            enemy.SetData(this, SpawnEnemy);
+        }
     }
 
     private IEnumerator SpawnCloud()
@@ -30,34 +38,11 @@ public class GameScript : MonoBehaviour
         {
             Instantiate(Cloud, new Vector3(-3.65f, Random.Range(1f, 4f), 0f), Quaternion.identity);
             yield return new WaitForSeconds(Delay);
-            
         }
     }
 
-//    [UsedImplicitly]
-//    public void DestroyEnemy()
-//    {
-//        Destroy(_spawnedEnemy);
-//    }
-//
-//    public void Click()
-//    {
-//        if (Input.GetMouseButtonUp(0))
-//        {
-//            _spawnedEnemy.transform.localScale += new Vector3(0.1f, 0.1f, 0f);
-//            if (_spawnedEnemy.transform.localScale.x >= 1.5f)
-//            {
-//                DestroyEnemy();
-//                SpawnEnemy();
-//            }
-//        }
-//    }
-//
-//    // Update is called once per frame
-    private void Update()
+    public void SetScore()
     {
-        //Click();
-        EnemyScript enemy = new EnemyScript();
-        enemy.Click();
+        ScoreText.text = string.Format("Score {0}", Score);
     }
 }
