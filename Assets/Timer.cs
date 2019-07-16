@@ -16,7 +16,6 @@ public class Timer : MonoBehaviour
         if (int.Parse(timer.text) == 0)
         {
          CancelInvoke();
-         
         }
     }
 
