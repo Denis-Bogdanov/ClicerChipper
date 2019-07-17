@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
@@ -16,6 +17,8 @@ public class Timer : MonoBehaviour
         if (int.Parse(timer.text) == 0)
         {
          CancelInvoke();
+         SceneManager.LoadScene("EndGameScene");  
+         
         }
     }
 

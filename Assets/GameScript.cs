@@ -2,6 +2,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class GameScript : MonoBehaviour
@@ -14,12 +15,16 @@ public class GameScript : MonoBehaviour
     private GameObject _spawnedEnemy;
 
     public Text ScoreText;
-    public int Score = 0;
+    public int Score;
+    public static int AllScore = 0;
+   
+    
 
     void Start()
     {
         SpawnEnemy();
         StartCoroutine(SpawnCloud());
+        
     }
 
     public void SpawnEnemy()
@@ -44,5 +49,6 @@ public class GameScript : MonoBehaviour
     public void SetScore()
     {
         ScoreText.text = string.Format("Score {0}", Score);
+        AllScore = Score;
     }
 }
