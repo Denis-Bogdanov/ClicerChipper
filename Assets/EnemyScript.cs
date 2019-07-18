@@ -17,7 +17,9 @@ public class EnemyScript : MonoBehaviour
 
     public void DestroyEnemy()
     {
+        
         Destroy(gameObject);
+        
     }
 
     public void OnMouseDown()
@@ -28,8 +30,7 @@ public class EnemyScript : MonoBehaviour
             DestroyEnemy();
             _gameScript.Score += Score;
             _gameScript.SetScore();
-
-
+            
             if (_callback != null)
             {
                 _callback();
