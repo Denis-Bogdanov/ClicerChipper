@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -8,8 +7,7 @@ public class EnemyScript : MonoBehaviour
     private GameScript _gameScript;
 
     public int Score;
-    
-    
+
 
     public void SetData(GameScript gameScript, Action callback)
     {
@@ -22,7 +20,6 @@ public class EnemyScript : MonoBehaviour
         Destroy(gameObject);
     }
 
-
     public void OnMouseDown()
     {
         gameObject.transform.localScale += new Vector3(0.1f, 0.1f, 0f);
@@ -31,8 +28,8 @@ public class EnemyScript : MonoBehaviour
             DestroyEnemy();
             _gameScript.Score += Score;
             _gameScript.SetScore();
-            
-            
+
+
             if (_callback != null)
             {
                 _callback();

@@ -1,13 +1,9 @@
 ﻿using System.Collections;
-using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class GameScript : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject[] Enemy;
     public Vector3 Position;
     public GameObject Cloud;
@@ -16,15 +12,13 @@ public class GameScript : MonoBehaviour
 
     public Text ScoreText;
     public int Score;
-    public static int AllScore = 0;
-   
-    
+    public static int AllScore; // нужна для вывода очков в новую сцену
+
 
     void Start()
     {
         SpawnEnemy();
         StartCoroutine(SpawnCloud());
-        
     }
 
     public void SpawnEnemy()
@@ -37,7 +31,7 @@ public class GameScript : MonoBehaviour
         }
     }
 
-    private IEnumerator SpawnCloud()
+    private IEnumerator SpawnCloud()    // спавн облачка на разных высотах с разной скоростью
     {
         while (true)
         {
